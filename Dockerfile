@@ -33,6 +33,9 @@ RUN poetry env use python && poetry install --no-root
 ENV VIRTUAL_ENV="/app/.venv"
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+# Set metaflow user
+ENV METAFLOW_USER=ychernushenko
+
 # Log in to Hugging Face CLI during build
 ARG HF_TOKEN
 RUN poetry run huggingface-cli login --token "$HF_TOKEN" --add-to-git-credential

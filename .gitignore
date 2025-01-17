@@ -40,3 +40,6 @@ docs/build/*
 
 # Requirements
 requirements.txt
+
+# Metaflow run data
+./metaflow/*
