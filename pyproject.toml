@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "kstack-metaflow"
+version = "0.1.0"
+description = ""
+authors = ["Yuri Chernushenko <y.chernushenko@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+huggingface-hub = "^0.27.1"
+flake8 = "^7.1.1"
+mypy = "^1.14.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
