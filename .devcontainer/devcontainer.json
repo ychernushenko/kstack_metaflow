@@ -3,7 +3,10 @@
     "build": {
         "dockerfile": "../Dockerfile",
         "args": {
-            "HF_TOKEN": "${env:HF_TOKEN}"
+            "HF_TOKEN": "${env:HF_TOKEN}",
+            "AWS_ACCESS_KEY_ID": "${env:AWS_ACCESS_KEY_ID}",
+            "AWS_SECRET_ACCESS_KEY": "${env:AWS_SECRET_ACCESS_KEY}",
+            "AWS_DEFAULT_REGION": "eu-central-1"
         }
     },
     "customizations": {

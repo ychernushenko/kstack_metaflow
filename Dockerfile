@@ -36,6 +36,21 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # Set metaflow user
 ENV METAFLOW_USER=ychernushenko
 
+# Setup Metaflow
+ARG AWS_ACCESS_KEY_ID
+ARG AWS_SECRET_ACCESS_KEY
+ARG AWS_DEFAULT_REGION
+
+# Set environment variables for AWS and Metaflow
+ENV AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+ENV AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+ENV AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION
+ENV METAFLOW_DEFAULT_DATASTORE=s3
+ENV METAFLOW_DATASTORE_SYSROOT_S3="s3://metaflowpersonal-metaflows3bucket-qjhvdp1sgdsv/datastore"
+ENV METAFLOW_DATATOOLS_SYSROOT_S3="s3://metaflowpersonal-metaflows3bucket-qjhvdp1sgdsv/datastools"
+ENV METAFLOW_ECS_S3_ACCESS_IAM_ROLE="arn:aws:iam::742491319596:role/MetaflowPersonal-BatchS3TaskRole-XMwedzusMCMY"
+ENV METAFLOW_BATCH_JOB_QUEUE="arn:aws:batch:eu-central-1:742491319596:job-queue/job-queue-MetaflowPersonal"
+
 # Log in to Hugging Face CLI during build
 ARG HF_TOKEN
 RUN poetry run huggingface-cli login --token "$HF_TOKEN" --add-to-git-credential
