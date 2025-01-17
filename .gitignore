@@ -42,4 +42,4 @@ docs/build/*
 requirements.txt
 
 # Metaflow run data
-./metaflow/*
+.metaflow/
