@@ -1,7 +1,7 @@
 {
     "name": "Python Dev Container",
     "build": {
-        "dockerfile": "../Dockerfile",
+        "dockerfile": "../Dockerfile_dev",
         "args": {
             "HF_TOKEN": "${env:HF_TOKEN}",
             "AWS_ACCESS_KEY_ID": "${env:AWS_ACCESS_KEY_ID}",
